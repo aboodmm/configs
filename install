@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Warning, this will overwrite all current config files"
+echo "Proceed? (y/n)"
+read choice
+
+copy_config() {
+  cp -v -r $PWD/.[^g.]* ~
+}
+
+if [ "$choice" = 'y' ]; then
+  copy_config;
+else
+  exit
+fi
+
